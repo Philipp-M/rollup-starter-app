@@ -11,8 +11,10 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
 	input: 'src/main.ts',
 	output: {
+		name: 'window',
 		file: 'public/bundle.js',
-		format: 'iife', // immediately-invoked function expression — suitable for <script> tags
+		extend: true,
+		format: 'umd',
 		sourcemap: true
 	},
 	plugins: [
